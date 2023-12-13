@@ -8,18 +8,33 @@
 
 <body>	
 	<script>
-		function secondHighest(arr) {
+		function secondHighest(arr) 
+		{
 			//Write your code here
+			let top=-1e9;
+			let second="Infinity";
+			for(let i=0;i<arr.length;i++){
+				if(arr[i]>top)
+				{
+					second=top;
+					top=arr[i];					
+				}
+			}
+			
+
+				return second==-1e9?"-Infinity":second;
 			
 		}
 
 		function Main() {
+			
 			var n = prompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
 			}
 			alert(secondHighest(arr));
+			
 		}
 		Main();
 	</script>
